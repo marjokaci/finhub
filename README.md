@@ -1,5 +1,6 @@
 
 CLI APP DOCUMENTATION
+
 The application has two phases. The first phase is the storage of the data. This is achieved using mainly two classes, the Finnhub and FinnhubDB. The first class, the Finnhub uses the API to make calls and get the data, then it passes these data to FinnhubDB class which does the storing in DB.
 
 The Finnhub downloads all the stocks present in a particular stock market, in my presentation I used NDX (Nasdaq 100) since it has sufficient data as requested. It first looks at the index constituents and then gets historical data for each of the stocks. My main issue here was the limit of the API of 30 API calls/ second, I managed solve it with time.sleep(60) as there is no way to overcome the issue other then waiting. Another choice that I had to make was the market to get FX data, I noticed that with OANDA exchange there was a time shift in the downloaded FX data, hence I opted for the forex.com. As requested, the only FX historical data that I downloaded where AUD/USD, EUR/USD, GBP/USD.
